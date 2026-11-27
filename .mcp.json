@@ -4,8 +4,8 @@
       "command": "python3",
       "args": [
         "-IB",
-        "${HOME}/.codex/plugins/data/mindie-agent-mindie-agent/hook_launcher.py",
-        "tools-mcp"
+        "${OMP_PLUGIN_ROOT}/scripts/mindie_launch.py",
+        "tools"
       ],
       "timeout": 510000
     },
@@ -13,8 +13,8 @@
       "command": "python3",
       "args": [
         "-IB",
-        "${HOME}/.codex/plugins/data/mindie-agent-mindie-agent/hook_launcher.py",
-        "remote-mcp"
+        "${OMP_PLUGIN_ROOT}/scripts/mindie_launch.py",
+        "remote"
       ],
       "timeout": 720000
     }

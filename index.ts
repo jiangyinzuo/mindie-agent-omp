@@ -7,12 +7,7 @@ import type { ExtensionAPI, ExtensionContext } from "@oh-my-pi/pi-coding-agent";
 const home = homedir();
 const storeDir = join(process.env.XDG_DATA_HOME || join(home, ".local", "share"), "mindie-agent", "omp");
 const storePath = join(storeDir, "experience.sqlite3");
-const adapterConfig = process.env.MINDIE_AGENT_CONFIG || join(
-	process.env.MINDIE_CONFIG_HOME || join(process.env.XDG_CONFIG_HOME || join(home, ".config"), "mindie-agent"),
-	"codex.json",
-);
-const launcher = join(process.env.CODEX_HOME || join(home, ".codex"), "plugins", "data", "mindie-agent-mindie-agent", "hook_launcher.py");
-const worker = join(import.meta.dir, "experience.py");
+const launcher = join(import.meta.dir, "scripts", "mindie_launch.py");
 const maxCaptureBytes = 256 * 1024;
 
 interface Scope {
@@ -65,10 +60,8 @@ function scopeAt(db: Database, cwd: string): Scope | null {
 }
 
 async function runWorker(args: string[], signal: AbortSignal, data?: Buffer): Promise<string> {
-	const { python } = await Bun.file(adapterConfig).json();
-	if (typeof python !== "string" || !isAbsolute(python)) throw new Error("MindIE runtime binding has no Python interpreter");
 	signal.throwIfAborted();
-	const child = Bun.spawn([python, "-IB", worker, ...args], {
+	const child = Bun.spawn(["python3", "-IB", launcher, "experience", ...args], {
 		stdin: data ?? "ignore",
 		stdout: "pipe",
 		stderr: "pipe",
