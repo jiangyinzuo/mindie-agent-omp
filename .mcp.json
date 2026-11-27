@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "mindie-tools": {
+      "command": "python3",
+      "args": [
+        "-IB",
+        "${HOME}/.codex/plugins/data/mindie-agent-mindie-agent/hook_launcher.py",
+        "tools-mcp"
+      ],
+      "timeout": 510000
+    },
+    "mindie-remote-dev": {
+      "command": "python3",
+      "args": [
+        "-IB",
+        "${HOME}/.codex/plugins/data/mindie-agent-mindie-agent/hook_launcher.py",
+        "remote-mcp"
+      ],
+      "timeout": 720000
+    }
+  }
+}

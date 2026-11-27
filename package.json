@@ -1,0 +1,10 @@
+{
+  "name": "mindie-agent-omp",
+  "version": "1.1.0",
+  "private": true,
+  "omp": {
+    "name": "MindIE Agent",
+    "description": "Ascend engineering tools, knowledge and workspace-local capture for oh-my-pi.",
+    "extensions": ["./index.ts"]
+  }
+}
