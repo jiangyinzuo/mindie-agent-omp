@@ -1,18 +1,22 @@
 {
   "mcpServers": {
     "mindie-tools": {
-      "command": "python3",
+      "command": "uv",
       "args": [
-        "-IB",
+        "run",
+        "--no-project",
+        "--script",
         "${OMP_PLUGIN_ROOT}/scripts/mindie_launch.py",
         "tools"
       ],
       "timeout": 510000
     },
     "mindie-remote-dev": {
-      "command": "python3",
+      "command": "uv",
       "args": [
-        "-IB",
+        "run",
+        "--no-project",
+        "--script",
         "${OMP_PLUGIN_ROOT}/scripts/mindie_launch.py",
         "remote"
       ],

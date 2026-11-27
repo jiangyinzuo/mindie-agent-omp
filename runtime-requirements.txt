@@ -1,0 +1,9 @@
+mindie-harness==0.1.9
+mindie-knowledge==0.13.25
+remote-dev==0.11.15
+mindie-coordinator==0.7.14
+mindie-profiler==0.5.17
+mindie-sim==0.9.19
+npu-top==0.3.5
+mindie-diagnostics==0.5.17
+mindie-debugger==0.1.4

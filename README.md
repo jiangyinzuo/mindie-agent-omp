@@ -4,6 +4,8 @@
 
 # MindIE Agent for oh-my-pi
 
+[![Release v1.3.0](https://img.shields.io/badge/Release-v1.3.0-blue)](https://github.com/mindie-agent/mindie-agent-omp/releases) · [English](README.en.md)
+
 为 oh-my-pi 提供昇腾知识检索、远端 NPU 开发工具和性能诊断。运行时来自 [MindIE Agent](https://github.com/mindie-agent/mindie-agent)。
 
 ## 安装
@@ -11,16 +13,23 @@
 在 oh-my-pi 中可以直接发送下面这句话。
 
 ```text
-帮我按 README 安装这个插件 https://github.com/jiangyinzuo/mindie-agent-omp
+帮我按 README 安装这个插件 https://github.com/mindie-agent/mindie-agent-omp
 ```
 
-在 Linux 或 WSL 上准备 `omp`、`uv`、`python3` 和 `git`。已在 omp 19.1.0 上验证。克隆本仓库或解压源码包，进入源码目录后运行：
+在 Linux 或 WSL 上准备 `omp`、`uv`、`python3`（3.10 或更新版本）和 `git`。克隆本仓库或解压源码包，进入源码目录后运行：
 
 ```sh
 uv run scripts/setup.py
 ```
 
-安装器会复用本机已有的 MindIE Codex 运行时，或从 MindIE 的 `v0.1.18` 发布包安装独立运行时。源码目录是插件的安装位置，请保留。更新源码后可以再次运行同一命令。
+默认安装需要支持 `--host omp` 的最新正式发布版。安装器会安装 OMP 运行时，并将源码目录注册为插件。请保留源码目录，更新后可重新运行。[下载 MindIE Agent 安装器](https://github.com/mindie-agent/mindie-agent/releases/latest/download/install.py)
+
+源码安装可指定支持 `--host omp` 的本地安装器。配合 `--channel-base-url` 可使用指定的 wheelhouse：
+
+```sh
+uv run scripts/setup.py --install-script /path/to/install.py \
+  --channel-base-url /path/to/wheelhouse
+```
 
 ## 使用
 
