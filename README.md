@@ -8,6 +8,12 @@
 
 ## 安装
 
+在 oh-my-pi 中可以直接发送下面这句话。
+
+```text
+帮我按 README 安装这个插件 https://github.com/jiangyinzuo/mindie-agent-omp
+```
+
 在 Linux 或 WSL 上准备 `omp`、`uv`、`python3` 和 `git`。已在 omp 19.1.0 上验证。克隆本仓库或解压源码包，进入源码目录后运行：
 
 ```sh
