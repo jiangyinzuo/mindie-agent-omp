@@ -1,4 +1,4 @@
-"""Run MindIE's pinned scanner with the shared runtime interpreter."""
+"""Run MindIE's pinned scanner with the OMP runtime interpreter."""
 
 import json
 from pathlib import Path
