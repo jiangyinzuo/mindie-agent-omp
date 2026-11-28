@@ -25,6 +25,7 @@ def runtime_python(config: Path) -> Path | None:
     return None
 
 
+def main() -> None:
     if len(sys.argv) < 2:
         raise SystemExit(USAGE)
     operation, *args = sys.argv[1:]
@@ -46,6 +47,7 @@ def runtime_python(config: Path) -> Path | None:
         "MINDIE_CONFIG_HOME": str(config_home),
         "MINDIE_DATA_HOME": str(data_home),
     }
+    command = [str(python), "-IB"]
     if operation == "experience":
         command.extend([str(ROOT / "scripts" / "experience.py"), *args])
     else:
